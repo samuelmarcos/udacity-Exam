@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}CS 253 Wiki - History{% endblock %}
+
+{% block task %}
+		{% if user %}
+			<li><a href="/_edit{{path}}">edit</a></li>
+			|
+			<li style="margin-right: 20px"><a href="{{path}}">view</a></li>
+			<li>{{user.username}}</li>
+			<li><a href="/logout">(logout)</a></li>
+		{% else %}
+			<li><a href="/login">login</a></li>
+			<li>|</li>
+			<li><a href="/signup">signup</a></li>
+		{% endif %}
+{% endblock %}
+	
+{% block content %}
+		<table class="history-data" width="100%" border="0" cellpadding="0" cellspacing="0">
+		{% for row in history %}
+			<tr>
+				<td width="170">{{row.created.strftime("%c")}}</td>
+				<td align="justify">{{row.content}}</td>
+				<td align="center"><a href="{{row.title}}?v={{row.version}}">view</a></td>
+			</tr>
+		{% endfor %}
+		</table>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}CS 253 Wiki - Signup{% endblock %}
+{% block task %}
+  <li><a href="/login">login</a></li>
+{% endblock %}
+
+{% block content %}
+	<h2>Signup</h2>
+	<form method="post">
+		<table>
+			<tr>
+    			<td class="lbl">Username</td>
+    			<td>
+    				<input name="username" type="text" value="{{username}}">
+    			</td>
+    			<td class="error">{{error_username}}</td>
+    		</tr>
+			<tr>
+    			<td class="lbl">Password</td>
+		        <td><input name="password" type="password"></td>
+		        <td class="error">{{error_password}}</td>
+		    </tr>
+		    <tr>
+    			<td>Verify Password</td>
+		        <td><input name="verify" type="password"></td>
+		        <td class="error">{{error_verify}}</td>
+		    </tr>
+		    <tr>
+    			<td>Email (optional)</td>
+		        <td><input name="email" type="text" value="{{email}}"></td>
+		        <td class="error">{{error_email}}</td>
+		    </tr>
+			<tr>
+				<td><input type="submit" value="Signup"></td>
+			</tr>
+		</table>
+	</form>
+{% endblock %}

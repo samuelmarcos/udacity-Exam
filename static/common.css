@@ -1,0 +1,47 @@
+body {
+width:1000px;
+font-family:monospace;
+margin:0 auto;
+}
+
+div.task {
+text-align:right;
+}
+
+ul {
+list-style-type:none;
+}
+
+ul li {
+display:inline;
+list-style-type:none;
+}
+
+a {
+text-decoration:none;
+color:inherit;
+}
+
+a:hover {
+text-decoration:underline;
+}
+
+textarea {
+width:98%;
+height:350px;
+font-size:17px;
+font-family:monospace;
+padding:10px;
+}
+
+div.content {
+width:100%;
+margin:20px auto 30px;
+}
+
+.label {text-align: right}
+.error {color: red}
+
+.history-data tr:nth-child(odd) td {
+background-color: #E0E0E0;
+}
